@@ -23,6 +23,8 @@ namespace TravelPal
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+
+            // Temporary comment 
         }
 
 
