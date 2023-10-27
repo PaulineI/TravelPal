@@ -73,7 +73,7 @@
             Grid.Row="4"
             Height="40"
             Width="100"
-            Background="MintCream"
+            Background="MintCream" Click="Button_Click_1"
          />
         <Button
              Name="btnRegister"

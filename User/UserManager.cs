@@ -51,7 +51,18 @@ namespace TravelPal
 
         public static bool SignInUser(string username, string password)
         {
-            return true;
+            foreach (var user in ListOfUsers)
+            {
+                if (user.Username == username && user.Password == password)
+                {
+                    signedInUser = user;
+
+                    return true;
+                }
+
+            }
+            MessageBox.Show("User not found!");
+            return false;
         }
 
 

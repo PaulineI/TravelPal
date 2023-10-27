@@ -17,5 +17,15 @@ namespace TravelPal
             RegisterWindow Register = new();
             Register.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+            UserManager.SignInUser(username, password);
+
+            TravelsWindow travelsWindow = new TravelsWindow();
+            travelsWindow.Show();
+        }
     }
 }
