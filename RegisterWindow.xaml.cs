@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using TravelPal.Models;
 
 namespace TravelPal
 {

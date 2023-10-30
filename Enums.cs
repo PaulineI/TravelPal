@@ -1,7 +1,6 @@
 ﻿namespace TravelPal
 {
-
-    enum Country
+    public enum Country
     {
         Albania,
         Andorra,
@@ -48,6 +47,12 @@
         Switzerland,
         Ukraine,
         UnitedKingdom
+    }
+
+    enum Trip
+    {
+        Worktrip,
+        Vacation
     }
 
 

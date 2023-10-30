@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using TravelPal.Models;
 
 namespace TravelPal
 {
@@ -10,6 +12,7 @@ namespace TravelPal
         public TravelsWindow()
         {
             InitializeComponent();
+            ListViewFill();
 
             txtSignedInUser.Text = UserManager.signedInUser.Username;
         }
@@ -20,5 +23,20 @@ namespace TravelPal
             addtravelwindow.Show();
 
         }
+
+        public void ListViewFill()
+        {
+            foreach (Travel travel in Travels)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Tag = travel;
+                item.Content = travel.GetInfo();
+
+                lstAddTravel.Items.Add(item);
+
+            }
+
+        }
+
     }
 }

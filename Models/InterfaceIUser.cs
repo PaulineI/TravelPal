@@ -1,4 +1,4 @@
-﻿namespace TravelPal.User
+﻿namespace TravelPal.Models
 {
     public interface IUser
     {

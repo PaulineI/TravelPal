@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         Title="AddTravelWindow" Height="450" Width="800">
-    <Grid IsEnabled="False">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition/>
@@ -30,27 +30,26 @@
             Grid.Column="3"
             Grid.Row="3"
             Height="30"
-            Width="150"              
+            Width="150"             
         />
         <TextBox
             Name="txtTravellers"
             Grid.Column="3"
             Grid.Row="4"
             Height="30"
-            Width="150"              
+            Width="150"               
         />
         <TextBox
             Name="txtMeetings"
-            Text="Meeting Details"
             VerticalAlignment="Center" 
             HorizontalAlignment="Center"
             Grid.Column="4"
-            Grid.RowSpan="2"
+            Grid.RowSpan="3"
             Grid.Row="4"
             TextWrapping="Wrap"
             Height="150"
             Width="150"  
-            Visibility="Hidden"
+            
         />
         <!--Label-->
         <Label
@@ -61,7 +60,8 @@
             FontFamily="Arial"
             FontSize="50"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"            
+            VerticalAlignment="Center" 
+            Foreground="#FF080000"            
         />
         <Label
             Content="City"
@@ -70,6 +70,7 @@
             FontSize="20"
             HorizontalAlignment="Right"
             VerticalAlignment="Center" 
+            Foreground="#FF080000"   
         />
         <Label
              Content="Land"
@@ -78,6 +79,7 @@
              FontSize="20"
              HorizontalAlignment="Right"
              VerticalAlignment="Center" 
+            Foreground="#FF080000"
         />
         <Label
              Content="Antal resenärer"
@@ -85,7 +87,8 @@
              Grid.Row="4"
              FontSize="20"
              HorizontalAlignment="Right"
-             VerticalAlignment="Center" 
+             VerticalAlignment="Center"
+            Foreground="#FF080000"   
 />
         <Label
              Content="Typ av resa"
@@ -94,7 +97,18 @@
              FontSize="20"
              HorizontalAlignment="Right"
              VerticalAlignment="Center" 
+             Foreground="#FF080000"   
          />
+        <Label
+            Name ="lbMeeting"
+            Content="Meeting Details"
+            Grid.Column="4"
+            Grid.Row="3"
+            FontSize="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom" 
+            Foreground="#FF080000"   
+        />
         
         <!--Combobox-->
         <ComboBox
@@ -102,14 +116,14 @@
             Grid.Column="3"
             Grid.Row="2"
             Height="30"
-            Width="150"
+            Width="150" 
          />
         <ComboBox
             Name ="cbTrip"
             Grid.Column="3"
             Grid.Row="5"
             Height="30"
-            Width="150"
+            Width="150" SelectionChanged="cbTrip_SelectionChanged" 
         />
         <CheckBox
             Name="cbAllInclusive"
@@ -118,7 +132,18 @@
             Grid.Row="5"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Visibility="Hidden"
+            
          />
+        <Button
+               Name ="btnAddTravel"
+               Content="Add Travel"
+               Grid.Column="1"
+               Grid.Row="3"
+               Height="50"
+               Width="120"
+               Background="MintCream"
+               BorderBrush="MediumSlateBlue"
+               BorderThickness="2" Foreground="#FF080000" Click="btnAddTravel_Click" 
+               />
     </Grid>
 </Window>

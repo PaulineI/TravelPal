@@ -3,23 +3,25 @@
     public class Travel
     {
         public string Destination { get; set; }
-        public string Countries { get; set; }
+        public Country Country { get; set; }
 
         public int Travellers { get; set; }
 
 
-        public Travel(string destination, string countries, int travellers)
+        public Travel(string destination, Country countries, int travellers)
         {
             Destination = destination;
-            Countries = countries;
+            Country = countries;
             Travellers = travellers;
 
         }
 
-        //public virtual GetInfo()
-        //{
-        //    return string 
-        //}
+        public string GetInfo()
+        {
+            string trip = $"{Destination} {Country} {Travellers}";
+
+            return trip;
+        }
 
 
     }

@@ -1,17 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
-using TravelPal.User;
-using MyUser = TravelPal.User.User;
 
 
-namespace TravelPal
+namespace TravelPal.Models
 {
     public static class UserManager
     {
 
-        private static List<IUser> ListOfUsers = new()
+        public static List<IUser> ListOfUsers = new()
         {
-            new MyUser ("user", "password"),
+            new User ("user", "password"),
             //Definierade User högst upp i koden, eftersom datorn blev förvirrad av att Namespace och klass heter samma sak och ville därför inte gå till constructorn. 
             new Admin("admin", "password")
         };
@@ -23,7 +21,7 @@ namespace TravelPal
         {
             if (ValidateUsername(username) == true)
             {
-                MyUser user = new MyUser(username, password);
+                User user = new User(username, password);
 
                 ListOfUsers.Add(user);
 

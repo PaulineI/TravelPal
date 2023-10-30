@@ -3,9 +3,9 @@
     public class WorkTrip : Travel
     {
 
-        public string meetingDetails { get; set; }
+        public string MeetingDetails { get; set; }
 
-        public WorkTrip(string destination, string countries, int travellers) : base(destination, countries, travellers)
+        public WorkTrip(string destination, Country countries, int travellers) : base(destination, countries, travellers)
         {
 
         }

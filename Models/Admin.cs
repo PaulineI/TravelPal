@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace TravelPal.User
+namespace TravelPal.Models
 {
     public class Admin : IUser
     {
