@@ -8,10 +8,8 @@ namespace TravelPal.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public static List<Travel> Travels { get; set; } = new()
+        public List<Travel> Travels { get; set; } = new()
         {
-            new WorkTrip("London", Country.UnitedKingdom, 2),
-            new Vacation("Istanbul", Country.Spain, 4)
         };
 
         [SetsRequiredMembers]
@@ -22,5 +20,7 @@ namespace TravelPal.Models
             Username = username;
             Password = password;
         }
+
+
     }
 }

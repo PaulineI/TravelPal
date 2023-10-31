@@ -26,7 +26,7 @@ namespace TravelPal
 
         public void ListViewFill()
         {
-            foreach (Travel travel in Travels)
+            foreach (Travel travel in User.Travels)
             {
                 ListViewItem item = new ListViewItem();
                 item.Tag = travel;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using TravelPal.Models;
 
 namespace TravelPal
@@ -29,28 +30,51 @@ namespace TravelPal
             string city = txtCity.Text;
             Country country = (Country)cbCountry.SelectedIndex;
             int travellers = int.Parse(txtTravellers.Text);
-            //string typeOfTrip = cbTrip.SelectedIndex.ToString();
+            Trip typeOfTrip = (Trip)cbTrip.SelectedIndex;
+
+            // Kolla på virtual office
+
+            // Condition ifall rutorna är tomma
+
+            if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Vacation)
+            {
+                WorkTrip newWorktrip = new(city, country, travellers);
+
+                User user = (User)UserManager.signedInUser;
+
+                user.Travels.Add(newWorktrip);
+
+                foreach (WorkTrip workTrip in user.Travels)
+                {
+                    ListViewItem item = new();
+                    item.Tag = workTrip;
+                    item.Content
+                }
+
+            }
+
+
 
             // Skapa en travel
-            if ((Trip)cbTrip.SelectedItem == Trip.Vacation)
-            {
-                WorkTrip workTrip = new(city, country, travellers);
+            //if ((Trip)cbTrip.SelectedItem == Trip.Vacation)
+            //{
+            //    WorkTrip workTrip = new(city, country, travellers);
 
-                // Lägg till traveln till vår user
-                User user = (User)UserManager.signedInUser;
+            //    // Lägg till traveln till vår user
+            //    User user = (User)UserManager.signedInUser;
 
-                user.Travels.Add(workTrip);
+            //    user.Travels.Add(workTrip);
 
-            }
-            else if ((Trip)cbTrip.SelectedItem == Trip.Vacation)
-            {
-                Vacation vacation = new(city, country, travellers);
+            //}
+            //else if ((Trip)cbTrip.SelectedItem == Trip.Vacation)
+            //{
+            //    Vacation vacation = new(city, country, travellers);
 
-                // Lägg till traveln till vår user
-                User user = (User)UserManager.signedInUser;
+            //    // Lägg till traveln till vår user
+            //    User user = (User)UserManager.signedInUser;
 
-                user.Travels.Add(vacation);
-            }
+            //    user.Travels.Add(vacation);
+            //}
 
 
             Close();

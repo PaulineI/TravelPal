@@ -32,6 +32,14 @@ namespace TravelPal
 
         }
 
+        //public static void CurrentTravels()
+        //{
+        //    User user = (User)UserManager.signedInUser;
+
+        //    new Vacation("Istanbul", Country.Spain, 4);
+
+        //    user.Travels.Add(new WorkTrip("London", Country.UnitedKingdom, 2));
+        //}
     }
 
 
