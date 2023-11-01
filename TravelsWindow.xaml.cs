@@ -21,7 +21,6 @@ namespace TravelPal
             {
                 txtSignedInUser.Text = UserManager.signedInUser.Username;
                 ListViewFill();
-
             }
 
             else if (UserManager.signedInUser!.GetType() == typeof(Admin))
@@ -50,7 +49,6 @@ namespace TravelPal
         {
             User user = (User)UserManager.signedInUser;
 
-
             foreach (Travel trip in user.Travels)
             {
                 ListViewItem item = new ListViewItem();
@@ -61,5 +59,17 @@ namespace TravelPal
 
         }
 
+        private void btnDetails_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
+
+            Travel travel = (Travel)selectedItem.Tag;
+
+            // Kolla koden i Virtual Office
+
+            TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow(travel);
+            travelDetailsWindow.Show();
+            Close();
+        }
     }
 }

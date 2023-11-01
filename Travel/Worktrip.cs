@@ -11,5 +11,14 @@
         }
 
 
+        public override string GetDetails()
+        {
+            string info = base.GetInfo();
+
+            info += $" | Meeting Details: {MeetingDetails} | Quantity: {Travellers}";
+
+            return info;
+        }
     }
 }
+

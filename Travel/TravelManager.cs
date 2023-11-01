@@ -30,9 +30,7 @@ namespace TravelPal
         public static void addTravel(Travel travel)
         {
             Travels.Add(travel);
-
         }
-
 
 
         public static void RemoveTravel(Travel travel)

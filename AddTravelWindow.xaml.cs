@@ -25,7 +25,6 @@ namespace TravelPal
 
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
-
             // Läs alla inputs för att bygga ihop en travel
             string city = txtCity.Text;
             Country country = (Country)cbCountry.SelectedIndex;
@@ -34,7 +33,6 @@ namespace TravelPal
             string meetingDetails = txtMeetings.Text;
 
             // Condition ifall rutorna är tomma
-
 
             if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Worktrip)
             {

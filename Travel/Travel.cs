@@ -15,13 +15,16 @@
 
         }
 
-        public virtual string GetInfo()
+        public string GetInfo()
         {
-            string trip = $"{Destination} {Country} {Travellers}";
+            string trip = $"City: {Destination} | Country: {Country} ";
 
             return trip;
         }
 
-
+        public virtual string GetDetails()
+        {
+            return GetInfo();
+        }
     }
 }

@@ -18,10 +18,22 @@
 
         //  TODO: Fixa en extended  GETINFO metod för details.
 
-        public virtual string GetDetails()
+        public override string GetDetails()
         {
-            string trip = $"{AllInclusive} {Destination} {Country} {Travellers}";
-            return trip;
+            if (AllInclusive)
+            {
+                string info = base.GetInfo();
+                info += $" | All Inclusive - Yes! | Quantity: {Travellers}";
+
+                return info;
+            }
+            else
+            {
+                string info = base.GetInfo();
+                info += $" | All Inclusive - No! | Quantity {Travellers}";
+
+                return info;
+            }
         }
 
     }

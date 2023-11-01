@@ -90,7 +90,7 @@
                 Width="120"
                 Background="MintCream"
                 BorderBrush="MediumSlateBlue"
-                BorderThickness="2"
+                BorderThickness="2" Click="btnDetails_Click"
             
          />
             <Button
@@ -139,7 +139,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 BorderBrush="MediumSlateBlue"
-                BorderThickness="3" 
+                BorderThickness="3"
                 />
         </Grid>
     </Border>
