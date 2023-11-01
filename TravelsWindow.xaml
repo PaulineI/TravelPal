@@ -115,7 +115,7 @@
                 
                 Background="MintCream" 
                 BorderBrush="MediumSlateBlue"
-                BorderThickness="2" Foreground="#FFDA0B0B"
+                BorderThickness="2" Foreground="#FFDA0B0B" Click="btnSignOut_Click"
         />
             <Button
                 x:Name="btnInfo"

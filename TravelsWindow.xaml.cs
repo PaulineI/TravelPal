@@ -55,7 +55,6 @@ namespace TravelPal
                 lstAddTravel.Items.Add(item);
             }
         }
-
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
             ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
@@ -93,7 +92,14 @@ namespace TravelPal
                 // Ta bort resan från vår frontend
                 lstAddTravel.Items.Remove(selectedItem);
             }
+        }
 
+        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            UserManager.SignOutUser();
+            Close();
         }
     }
 }

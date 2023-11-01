@@ -19,7 +19,6 @@ namespace TravelPal.Models
             new Admin("admin", "password")
         };
 
-
         public static IUser signedInUser { get; set; }
 
         public static void AdminRemoveTravel(Travel travelToRemove)
@@ -45,7 +44,6 @@ namespace TravelPal.Models
                 }
             }
         }
-
 
         public static IUser? AddUser(string username, string password)
         {
@@ -93,7 +91,10 @@ namespace TravelPal.Models
             return false;
         }
 
-
+        public static void SignOutUser()
+        {
+            signedInUser = null;
+        }
 
     }
 }
