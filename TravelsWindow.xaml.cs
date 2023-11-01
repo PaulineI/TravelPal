@@ -15,8 +15,6 @@ namespace TravelPal
         {
             InitializeComponent();
 
-
-
             if (UserManager.signedInUser!.GetType() == typeof(User))
             {
                 txtSignedInUser.Text = UserManager.signedInUser.Username;
@@ -56,7 +54,6 @@ namespace TravelPal
                 item.Content = trip.GetInfo();
                 lstAddTravel.Items.Add(item);
             }
-
         }
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
@@ -70,6 +67,33 @@ namespace TravelPal
             TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow(travel);
             travelDetailsWindow.Show();
             Close();
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (UserManager.signedInUser!.GetType() == typeof(Admin))
+            {
+                ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
+
+                Travel travel = (Travel)selectedItem.Tag;
+
+                UserManager.AdminRemoveTravel(travel);
+
+                lstAddTravel.Items.Remove(selectedItem);
+            }
+            else if (UserManager.signedInUser!.GetType() == typeof(User))
+            {
+                ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
+
+                Travel travel = (Travel)selectedItem.Tag;
+
+                // Ta bort resan från vår "backend"
+                ((User)UserManager.signedInUser).Travels.Remove(travel);
+
+                // Ta bort resan från vår frontend
+                lstAddTravel.Items.Remove(selectedItem);
+            }
+
         }
     }
 }

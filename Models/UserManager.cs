@@ -22,6 +22,30 @@ namespace TravelPal.Models
 
         public static IUser signedInUser { get; set; }
 
+        public static void AdminRemoveTravel(Travel travelToRemove)
+        {
+            //Loopa över alla users
+            foreach (var user in ListOfUsers)
+            {
+                if (user is User)
+                {
+                    //Kolla i varje users lista med resor
+
+                    foreach (var userTravel in ((User)user).Travels)
+                    {
+                        //Hittas resan som ska tas bort... Ta bort den!
+
+                        if (userTravel == travelToRemove)
+                        {
+                            ((User)user).Travels.Remove(travelToRemove);
+
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
 
         public static IUser? AddUser(string username, string password)
         {

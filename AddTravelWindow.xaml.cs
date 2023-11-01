@@ -51,7 +51,6 @@ namespace TravelPal
                 Vacation newVacation = new(allInclusive, city, country, travellers);
 
                 user.Travels.Add(newVacation);
-
             }
 
             TravelsWindow travelsWindow = new();
@@ -79,7 +78,6 @@ namespace TravelPal
 
             //    user.Travels.Add(vacation);
             //}
-
 
         }
 

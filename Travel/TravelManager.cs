@@ -35,7 +35,7 @@ namespace TravelPal
 
         public static void RemoveTravel(Travel travel)
         {
-
+            GetAllTravels().Remove(travel);
         }
 
 
