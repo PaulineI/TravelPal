@@ -11,14 +11,13 @@ namespace TravelPal.Models
         {
             new User ("user", "password") { Travels = new List<Travel>()
             {
-                new WorkTrip("Paris", Country.France, 2),
-                new Vacation("Split", Country.Croatia, 5)
+                new WorkTrip("Conference city", "Paris", Country.France, 2),
+                new Vacation(true, "Split", Country.Croatia, 5)
             }
             },
 
             new Admin("admin", "password")
         };
-
 
 
         public static IUser signedInUser { get; set; }

@@ -7,6 +7,46 @@
         mc:Ignorable="d"
         Title="TravelDetailsWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <ListView
+            Name="lstDetails"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Height="350"
+            Width="400"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            BorderBrush="MediumSlateBlue"
+            BorderThickness="3"
+         />
+        <Label
+            Content="Travel Details"
+            Grid.Column="1"
+            Grid.Row="2"
+            FontSize="25"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+         />
+
+
+
     </Grid>
 </Window>
