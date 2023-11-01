@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using TravelPal.Models;
 
+
 namespace TravelPal
 {
     /// <summary>
@@ -9,31 +10,53 @@ namespace TravelPal
     /// </summary>
     public partial class TravelsWindow : Window
     {
+
         public TravelsWindow()
         {
             InitializeComponent();
-            ListViewFill();
 
-            txtSignedInUser.Text = UserManager.signedInUser.Username;
+
+
+            if (UserManager.signedInUser!.GetType() == typeof(User))
+            {
+                txtSignedInUser.Text = UserManager.signedInUser.Username;
+                ListViewFill();
+
+            }
+
+            else if (UserManager.signedInUser!.GetType() == typeof(Admin))
+            {
+                txtSignedInUser.Text = UserManager.signedInUser.Username;
+
+                foreach (Travel t in TravelManager.GetAllTravels())
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Tag = t;
+                    item.Content = t.GetInfo();
+                    lstAddTravel.Items.Add(item);
+                }
+            }
         }
 
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
             AddTravelWindow addtravelwindow = new AddTravelWindow();
             addtravelwindow.Show();
+            Close();
 
         }
 
         public void ListViewFill()
         {
-            foreach (Travel travel in User.Travels)
+            User user = (User)UserManager.signedInUser;
+
+
+            foreach (Travel trip in user.Travels)
             {
                 ListViewItem item = new ListViewItem();
-                item.Tag = travel;
-                item.Content = travel.GetInfo();
-
+                item.Tag = trip;
+                item.Content = trip.GetInfo();
                 lstAddTravel.Items.Add(item);
-
             }
 
         }

@@ -7,7 +7,6 @@
 
         public int Travellers { get; set; }
 
-
         public Travel(string destination, Country countries, int travellers)
         {
             Destination = destination;
@@ -16,7 +15,7 @@
 
         }
 
-        public string GetInfo()
+        public virtual string GetInfo()
         {
             string trip = $"{Destination} {Country} {Travellers}";
 

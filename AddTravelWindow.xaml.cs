@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using TravelPal.Models;
+
 
 namespace TravelPal
 {
@@ -31,28 +31,34 @@ namespace TravelPal
             Country country = (Country)cbCountry.SelectedIndex;
             int travellers = int.Parse(txtTravellers.Text);
             Trip typeOfTrip = (Trip)cbTrip.SelectedIndex;
-
-            // Kolla på virtual office
+            string meetingDetails = txtMeetings.Text;
 
             // Condition ifall rutorna är tomma
 
-            if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Vacation)
+
+            if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Worktrip)
             {
-                WorkTrip newWorktrip = new(city, country, travellers);
 
                 User user = (User)UserManager.signedInUser;
+                WorkTrip newWorktrip = new(meetingDetails, city, country, travellers);
 
                 user.Travels.Add(newWorktrip);
 
-                foreach (WorkTrip workTrip in user.Travels)
-                {
-                    ListViewItem item = new();
-                    item.Tag = workTrip;
-                    item.Content
-                }
+            }
+
+            else if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Vacation)
+            {
+                bool allInclusive = (bool)cbAllInclusive.IsChecked;
+                User user = (User)UserManager.signedInUser;
+                Vacation newVacation = new(allInclusive, city, country, travellers);
+
+                user.Travels.Add(newVacation);
 
             }
 
+            TravelsWindow travelsWindow = new();
+            travelsWindow.Show();
+            Close();
 
 
             // Skapa en travel
@@ -76,8 +82,6 @@ namespace TravelPal
             //    user.Travels.Add(vacation);
             //}
 
-
-            Close();
 
         }
 

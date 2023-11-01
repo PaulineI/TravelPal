@@ -9,10 +9,17 @@ namespace TravelPal.Models
 
         public static List<IUser> ListOfUsers = new()
         {
-            new User ("user", "password"),
-            //Definierade User högst upp i koden, eftersom datorn blev förvirrad av att Namespace och klass heter samma sak och ville därför inte gå till constructorn. 
+            new User ("user", "password") { Travels = new List<Travel>()
+            {
+                new WorkTrip("Paris", Country.France, 2),
+                new Vacation("Split", Country.Croatia, 5)
+            }
+            },
+
             new Admin("admin", "password")
         };
+
+
 
         public static IUser signedInUser { get; set; }
 
