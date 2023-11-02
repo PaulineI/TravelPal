@@ -20,42 +20,59 @@ namespace TravelPal
             txtMeetings.Visibility = Visibility.Hidden;
             lbMeeting.Visibility = Visibility.Hidden;
             cbAllInclusive.Visibility = Visibility.Hidden;
-
         }
-
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
-            // Läs alla inputs för att bygga ihop en travel
-            string city = txtCity.Text;
-            Country country = (Country)cbCountry.SelectedIndex;
-            int travellers = int.Parse(txtTravellers.Text);
-            Trip typeOfTrip = (Trip)cbTrip.SelectedIndex;
-            string meetingDetails = txtMeetings.Text;
-
-            // Condition ifall rutorna är tomma
-
-            if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Worktrip)
+            try
             {
+                // Läs alla inputs för att bygga ihop en travel
+                string city = txtCity.Text;
+                Country country = (Country)cbCountry.SelectedIndex;
+                int travellers = int.Parse(txtTravellers.Text);
+                Trip typeOfTrip = (Trip)cbTrip.SelectedIndex;
+                string meetingDetails = txtMeetings.Text;
 
-                User user = (User)UserManager.signedInUser;
-                WorkTrip newWorktrip = new(meetingDetails, city, country, travellers);
+                // Condition ifall rutorna är tomma
 
-                user.Travels.Add(newWorktrip);
+
+
+                if (city != "" && cbCountry.SelectedIndex > -1 && travellers != 0 && typeOfTrip == Trip.Worktrip)
+                {
+
+                    User user = (User)UserManager.signedInUser;
+                    WorkTrip newWorktrip = new(meetingDetails, city, country, travellers);
+
+                    user.Travels.Add(newWorktrip);
+                }
+
+                else if (city != "" && cbCountry.SelectedIndex > -1 && travellers != 0 && typeOfTrip == Trip.Vacation)
+                {
+                    bool allInclusive = (bool)cbAllInclusive.IsChecked;
+                    User user = (User)UserManager.signedInUser;
+                    Vacation newVacation = new(allInclusive, city, country, travellers);
+
+                    user.Travels.Add(newVacation);
+                }
+
+                else
+                {
+                    MessageBox.Show("Please fill in all the information!");
+
+                }
+
+                TravelsWindow travelsWindow = new();
+                travelsWindow.Show();
+                Close();
+            }
+
+            catch (FormatException)
+            {
+                MessageBox.Show("Oops! You have to enter a valid number or a valid city!");
+                txtCity.Text = "";
+                txtTravellers.Text = "";
 
             }
 
-            else if (city != "" && country != 0 && travellers != 0 && typeOfTrip == Trip.Vacation)
-            {
-                bool allInclusive = (bool)cbAllInclusive.IsChecked;
-                User user = (User)UserManager.signedInUser;
-                Vacation newVacation = new(allInclusive, city, country, travellers);
-
-                user.Travels.Add(newVacation);
-            }
-
-            TravelsWindow travelsWindow = new();
-            travelsWindow.Show();
-            Close();
 
 
             // Skapa en travel

@@ -20,10 +20,10 @@ namespace TravelPal
 
             UserManager.AddUser(username, password);
 
-            Close();
-
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+
+            Close();
         }
 
 

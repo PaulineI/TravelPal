@@ -53,7 +53,7 @@ namespace TravelPal.Models
 
                 ListOfUsers.Add(user);
 
-                MessageBox.Show("You are now a registered user!");
+                MessageBox.Show("Welcome to TravelPal! You are now a registered user!");
 
                 return user;
             }
