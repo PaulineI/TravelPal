@@ -59,13 +59,20 @@ namespace TravelPal
         {
             ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
 
-            Travel travel = (Travel)selectedItem.Tag;
+            if (selectedItem != null)
+            {
+                Travel travel = (Travel)selectedItem.Tag;
 
-            // Kolla koden i Virtual Office
+                TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow(travel);
+                travelDetailsWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Please choose a trip!");
+            }
 
-            TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow(travel);
-            travelDetailsWindow.Show();
-            Close();
+
         }
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
@@ -74,23 +81,37 @@ namespace TravelPal
             {
                 ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
 
-                Travel travel = (Travel)selectedItem.Tag;
+                if (selectedItem != null)
+                {
+                    Travel travel = (Travel)selectedItem.Tag;
 
-                UserManager.AdminRemoveTravel(travel);
+                    UserManager.AdminRemoveTravel(travel);
 
-                lstAddTravel.Items.Remove(selectedItem);
+                    lstAddTravel.Items.Remove(selectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("Please choose a trip!");
+                }
             }
             else if (UserManager.signedInUser!.GetType() == typeof(User))
             {
                 ListViewItem selectedItem = (ListViewItem)lstAddTravel.SelectedItem;
 
-                Travel travel = (Travel)selectedItem.Tag;
+                if (selectedItem != null)
+                {
+                    Travel travel = (Travel)selectedItem.Tag;
 
-                // Ta bort resan från vår "backend"
-                ((User)UserManager.signedInUser).Travels.Remove(travel);
+                    // Ta bort resan från vår "backend"
+                    ((User)UserManager.signedInUser).Travels.Remove(travel);
 
-                // Ta bort resan från vår frontend
-                lstAddTravel.Items.Remove(selectedItem);
+                    // Ta bort resan från vår frontend
+                    lstAddTravel.Items.Remove(selectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("Please choose a trip!");
+                }
             }
         }
 
