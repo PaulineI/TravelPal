@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="TravelDetailsWindow" Height="450" Width="800">
+        Title="TravelDetailsWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -30,7 +32,7 @@
             Grid.ColumnSpan="4"
             Grid.Row="1"
             Grid.RowSpan="5"
-            Height="350"
+            Height="100"
             Width="500"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
@@ -45,6 +47,14 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
          />
+        <Button
+              Content="Close"
+              Grid.Column="1"
+              Grid.Row="4"
+              Height="40"
+              Width="100"
+              Background="MintCream" Click="Button_Click" 
+        />
 
 
 

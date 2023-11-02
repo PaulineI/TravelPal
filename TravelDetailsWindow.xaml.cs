@@ -42,6 +42,14 @@ namespace TravelPal
             //}
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TravelsWindow travelswindow = new TravelsWindow();
+            travelswindow.Show();
+
+            Close();
+        }
     }
 }
 
