@@ -98,7 +98,7 @@
                 <BitmapImage UriSource="travelpal-logo.png" />
             </Image.Source>
         </Image>
-        <Image Grid.Column="5" HorizontalAlignment="Left" Height="641" Margin="115,54,0,0" Grid.RowSpan="5" Grid.Row="2" VerticalAlignment="Top" Width="670"/>
+        
 
     </Grid>
 

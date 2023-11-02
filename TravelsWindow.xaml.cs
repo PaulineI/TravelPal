@@ -104,7 +104,9 @@ namespace TravelPal
 
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoWindow infoWindow = new InfoWindow();
+            infoWindow.Show();
+            Close();
         }
     }
 }
