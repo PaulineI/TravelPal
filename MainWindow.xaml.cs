@@ -17,6 +17,7 @@ namespace TravelPal
         {
             RegisterWindow Register = new();
             Register.Show();
+            Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -27,6 +28,7 @@ namespace TravelPal
 
             TravelsWindow travelsWindow = new TravelsWindow();
             travelsWindow.Show();
+            Close();
         }
     }
 }

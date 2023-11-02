@@ -12,12 +12,7 @@ namespace TravelPal.Models
         {
         };
 
-
-
         [SetsRequiredMembers]
-
-
-
 
         public User(string username, string password)
         {
