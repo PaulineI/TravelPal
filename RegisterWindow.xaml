@@ -9,6 +9,9 @@
         WindowStartupLocation="CenterScreen"
         >
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/travelpal-logo.png" Stretch="None" Opacity="0.5"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition/>
@@ -17,7 +20,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -32,41 +36,55 @@
             Name="txtUsername1"
             Grid.Column="4"
             Grid.Row="2"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
             Height="30"
-            Width="150"             
+            Width="150" 
+            Margin="0"             
         />
         <PasswordBox
             Name="txtPassword1"
             Grid.Column="4"
-            Grid.ColumnSpan=""
+            Grid.ColumnSpan="3"
             Grid.Row="3"
+            HorizontalAlignment="Left"
             Height="30"
-            Width="150"              
+            Width="150" 
+            Margin="0"              
         />
         <!--Label-->
         <Label
             Grid.Column="3"
-            Grid.ColumnSpan="2"
+            Grid.ColumnSpan="3"
             Grid.Row="1"
             Content="New User"
             FontFamily="Arial"
             FontSize="50"
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"            
         />
         <Label
             Grid.Column="2"
             Grid.Row="2"
-            Content="Username"
+            Grid.ColumnSpan="3"
+            FontWeight="Bold"
+            Content="Enter a new Username"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            VerticalAlignment="Center" 
+            BorderThickness="0,0,10,0" 
+            Margin="115,0,0,0"
           />
         <Label
              Grid.Column="2"
              Grid.Row="3"
-             Content="Password"
-             HorizontalAlignment="Right"
-             VerticalAlignment="Center"
+             Grid.ColumnSpan="3"
+            FontWeight="Bold"
+             Content="Enter a new Password"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Center" 
+            BorderThickness="0,0,10,0" 
+            Margin="118,0,0,0"
             />
         <Button
             Content="Create User"
@@ -74,7 +92,13 @@
             Grid.Row="4"
             Height="40"
             Width="100"
-            Background="MintCream" Click="Button_Click"
+            Background="MintCream" 
+            Click="Button_Click" 
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="2"
+            Margin="0"
             />
+
+
     </Grid>
 </Window>

@@ -32,9 +32,6 @@ namespace TravelPal
                 Trip typeOfTrip = (Trip)cbTrip.SelectedIndex;
                 string meetingDetails = txtMeetings.Text;
 
-                // Condition ifall rutorna är tomma
-
-
 
                 if (city != "" && cbCountry.SelectedIndex > -1 && travellers != 0 && typeOfTrip == Trip.Worktrip)
                 {
@@ -57,7 +54,6 @@ namespace TravelPal
                 else
                 {
                     MessageBox.Show("Please fill in all the information!");
-
                 }
 
                 TravelsWindow travelsWindow = new();
@@ -72,29 +68,6 @@ namespace TravelPal
                 txtTravellers.Text = "";
 
             }
-
-
-
-            // Skapa en travel
-            //if ((Trip)cbTrip.SelectedItem == Trip.Vacation)
-            //{
-            //    WorkTrip workTrip = new(city, country, travellers);
-
-            //    // Lägg till traveln till vår user
-            //    User user = (User)UserManager.signedInUser;
-
-            //    user.Travels.Add(workTrip);
-
-            //}
-            //else if ((Trip)cbTrip.SelectedItem == Trip.Vacation)
-            //{
-            //    Vacation vacation = new(city, country, travellers);
-
-            //    // Lägg till traveln till vår user
-            //    User user = (User)UserManager.signedInUser;
-
-            //    user.Travels.Add(vacation);
-            //}
 
         }
 
