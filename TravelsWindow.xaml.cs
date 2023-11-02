@@ -101,5 +101,10 @@ namespace TravelPal
             UserManager.SignOutUser();
             Close();
         }
+
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

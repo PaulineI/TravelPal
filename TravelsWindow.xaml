@@ -128,7 +128,7 @@
                 Width="120"
                 Background="MintCream" 
                 BorderBrush="MediumSlateBlue"
-                BorderThickness="2"
+                BorderThickness="2" Click="btnInfo_Click"
         />
             <ListView
                 Name="lstAddTravel"

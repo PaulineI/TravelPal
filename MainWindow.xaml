@@ -86,7 +86,6 @@
              Width="100"
              Background="MintCream" Click="Button_Click"   
       />
-
         <Image Width="250" 
                Height="300" 
                Margin="0, 0, 20, 0" 
