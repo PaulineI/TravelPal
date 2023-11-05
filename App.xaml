@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:TravelPal"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--<SolidColorBrush x:Key="blue" Color="MediumSlateBlue"/>-->
     </Application.Resources>
 </Application>

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="AddTravelWindow" Height="450" Width="800">
+        Title="AddTravelWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -145,5 +146,17 @@
                BorderBrush="MediumSlateBlue"
                BorderThickness="2" Foreground="#FF080000" Click="btnAddTravel_Click" 
                />
+        <Button
+               Name ="btnReturn"
+               Content="Return"
+               Grid.Column="1"
+               Grid.Row="4"
+               Height="50"
+               Width="120"
+               Background="MintCream"
+               BorderBrush="MediumSlateBlue"
+               BorderThickness="2" 
+               Foreground="#FF080000" Click="btnReturn_Click" 
+       />
     </Grid>
 </Window>

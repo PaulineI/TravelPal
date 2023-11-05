@@ -98,6 +98,15 @@
             Grid.RowSpan="2"
             Margin="0"
             />
+        <Button
+           Name="btngoBack"
+           Content="Go Back!"
+           Grid.Column="6"
+           Grid.Row="5"
+           Height="40"
+           Width="100"
+           Background="MintCream" Click="btngoBack_Click"   
+            />
 
 
     </Grid>

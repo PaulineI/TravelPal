@@ -23,14 +23,14 @@
             if (AllInclusive)
             {
                 string info = base.GetInfo();
-                info += $" | All Inclusive - Yes! | Quantity: {Travellers}";
+                info += $" | All Inclusive - Yes! | Travellers: {Travellers}";
 
                 return info;
             }
             else
             {
                 string info = base.GetInfo();
-                info += $" | All Inclusive - No! | Quantity {Travellers}";
+                info += $" | All Inclusive - No! | Travellers: {Travellers}";
 
                 return info;
             }

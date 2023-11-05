@@ -18,14 +18,24 @@ namespace TravelPal
             string username = txtUsername1.Text;
             string password = txtPassword1.Password;
 
-            UserManager.AddUser(username, password);
-
-            MainWindow mainWindow = new MainWindow();
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please fill in all fields");
+                return;
+            }
+            else
+            {
+                UserManager.AddUser(username, password);
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+        }
+        private void btngoBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new();
             mainWindow.Show();
-
             Close();
         }
-
-
     }
 }

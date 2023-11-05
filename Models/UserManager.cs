@@ -85,9 +85,8 @@ namespace TravelPal.Models
 
                     return true;
                 }
-
             }
-            MessageBox.Show("User not found!");
+
             return false;
         }
 

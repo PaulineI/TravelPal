@@ -25,21 +25,6 @@ namespace TravelPal
             return allTravels;
         }
 
-
-
-        public static void addTravel(Travel travel)
-        {
-            Travels.Add(travel);
-        }
-
-
-        public static void RemoveTravel(Travel travel)
-        {
-            GetAllTravels().Remove(travel);
-        }
-
-
-
     }
 
 

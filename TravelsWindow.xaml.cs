@@ -15,6 +15,7 @@ namespace TravelPal
         {
             InitializeComponent();
 
+
             if (UserManager.signedInUser!.GetType() == typeof(User))
             {
                 txtSignedInUser.Text = UserManager.signedInUser.Username;
@@ -33,6 +34,9 @@ namespace TravelPal
                     lstAddTravel.Items.Add(item);
                 }
             }
+
+
+
         }
 
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)

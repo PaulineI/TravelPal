@@ -24,11 +24,21 @@ namespace TravelPal
         {
             string username = txtUsername.Text;
             string password = txtPassword.Password;
-            UserManager.SignInUser(username, password);
 
-            TravelsWindow travelsWindow = new TravelsWindow();
-            travelsWindow.Show();
-            Close();
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("User not found!");
+                return;
+            }
+            else if (txtUsername.Text != null && txtPassword.Password != null)
+            {
+                UserManager.SignInUser(username, password);
+
+                TravelsWindow travelsWindow = new TravelsWindow();
+                travelsWindow.Show();
+                Close();
+            }
+
         }
     }
 }

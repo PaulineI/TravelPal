@@ -48,14 +48,16 @@
             />
         <TextBox
              IsReadOnly="True"
-             Text=""
+             Text="TravelPal is an app to register all your upcoming travels. Use it, enjoy!"
              Grid.Column="1"
              Grid.ColumnSpan="4"
              Grid.Row="1"
              Grid.RowSpan="6"
              Width ="400"
              Height="400"
-             TextWrapping="NoWrap"
+             FontSize="20"
+             HorizontalContentAlignment="Center"
+             TextWrapping="WrapWithOverflow"
              VerticalAlignment="Top"
              HorizontalAlignment="Center" 
              BorderBrush="MediumSlateBlue"
